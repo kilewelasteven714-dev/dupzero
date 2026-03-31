@@ -1,0 +1,9 @@
+# DupZero Release Keystore Properties
+# IMPORTANT: Rename this file to key.properties and fill in your values
+# NEVER commit key.properties to GitHub — it contains passwords!
+# key.properties is already in .gitignore
+
+storePassword=YOUR_KEYSTORE_PASSWORD
+keyPassword=YOUR_KEY_PASSWORD
+keyAlias=dupzero
+storeFile=../keystore/dupzero-release.jks

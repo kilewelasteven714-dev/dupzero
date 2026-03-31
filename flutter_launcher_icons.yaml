@@ -1,0 +1,13 @@
+# DupZero App Icon Configuration
+# Run: flutter pub run flutter_launcher_icons
+# Developed by Tavoo
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/app_icon.png"
+  min_sdk_android: 21
+  adaptive_icon_background: "#07070F"
+  adaptive_icon_foreground: "assets/icons/app_icon_foreground.png"
+  remove_alpha_ios: true
+  background_color_ios: "#07070F"

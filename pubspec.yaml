@@ -1,0 +1,130 @@
+name: dupzero
+description: DupZero – Intelligent Duplicate File Cleaner
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # State Management
+  flutter_bloc: ^8.1.3
+  equatable: ^2.0.5
+  provider: ^6.1.1
+
+  # Navigation
+  go_router: ^12.1.3
+
+  # Local Database
+  sqflite: ^2.3.0
+  sqflite_common_ffi: ^2.3.0
+  path_provider: ^2.1.1
+  path: ^1.8.3
+
+  # Encryption
+  encrypt: ^5.0.3
+  flutter_secure_storage: ^9.0.0
+  crypto: ^3.0.3
+
+  # File Management
+  file_picker: ^6.1.1
+  permission_handler: ^11.1.0
+  share_plus: ^7.2.1
+  open_file: ^3.3.2
+  mime: ^1.0.4
+
+  # Image Processing / Perceptual Hashing
+  image: ^4.1.3
+
+  # Cloud Storage
+  googleapis: ^12.0.0
+  googleapis_auth: ^1.4.1
+  http: ^1.1.2
+
+  # Authentication
+  firebase_core: ^2.24.2
+  firebase_auth: ^4.16.0
+  google_sign_in: ^6.2.1
+
+  # Background Processing
+  workmanager: ^0.5.2
+  flutter_background_service: ^5.0.5
+
+  # Local Notifications
+  flutter_local_notifications: ^16.3.0
+
+  # UI Components
+  fl_chart: ^0.65.0
+  flutter_animate: ^4.3.0
+  shimmer: ^3.0.0
+  lottie: ^3.0.0
+  cached_network_image: ^3.3.1
+  flutter_svg: ^2.0.9
+
+  # In-App Purchases
+  in_app_purchase: ^3.1.11
+
+  # Storage Info
+  disk_space: ^0.2.0
+  device_info_plus: ^9.1.1
+  package_info_plus: ^5.0.1
+
+  # QR Code
+  qr_flutter: ^4.1.0          # Generate QR codes
+  mobile_scanner: ^5.1.0      # Scan QR codes with camera
+
+  # Utilities
+  uuid: ^4.2.2
+  intl: ^0.18.1
+  collection: ^1.17.2
+  rxdart: ^0.27.7
+  dartz: ^0.10.1
+  get_it: ^7.6.4
+  injectable: ^2.3.2
+  connectivity_plus: ^5.0.2
+  shared_preferences: ^2.2.2
+  logger: ^2.0.2+1
+  freezed_annotation: ^2.4.1
+  json_annotation: ^4.8.1
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+  build_runner: ^2.4.7
+  injectable_generator: ^2.4.1
+  freezed: ^2.4.5
+  json_serializable: ^6.7.1
+  hive_generator: ^2.0.1
+  mockito: ^5.4.3
+  bloc_test: ^9.1.5
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/lottie/
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Regular.ttf
+        - asset: assets/fonts/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Inter-Bold.ttf
+          weight: 700
+
+# Internationalization
+flutter_gen:
+  generate: true
+

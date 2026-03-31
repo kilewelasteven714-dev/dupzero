@@ -1,0 +1,94 @@
+rules_version = '2';
+// DupZero Firestore Security Rules
+// Developed by Tavoo
+// Paste these rules in Firebase Console → Firestore → Rules
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── Helper functions ──────────────────────────────────────
+    // Check if user is logged in
+    function isLoggedIn() {
+      return request.auth != null;
+    }
+
+    // Check if user owns the document
+    function isOwner(userId) {
+      return isLoggedIn() && request.auth.uid == userId;
+    }
+
+    // Check if user is Pro subscriber
+    function isPro() {
+      return isLoggedIn() &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isPremium == true;
+    }
+
+    // Validate that only allowed fields are written
+    function hasOnlyFields(fields) {
+      return request.resource.data.keys().hasOnly(fields);
+    }
+
+    // ── Users collection ─────────────────────────────────────
+    // Each user can only read and write their OWN data
+    match /users/{userId} {
+      allow read:  if isOwner(userId);
+      allow create: if isOwner(userId) && hasOnlyFields([
+        'email', 'displayName', 'photoUrl',
+        'isPremium', 'planType', 'planExpiresAt',
+        'createdAt', 'lastSeenAt'
+      ]);
+      allow update: if isOwner(userId) && hasOnlyFields([
+        'displayName', 'photoUrl', 'isPremium',
+        'planType', 'planExpiresAt', 'lastSeenAt'
+      ]);
+      // Nobody can delete user accounts directly
+      allow delete: if false;
+
+      // ── Scan history subcollection ─────────────────────────
+      // Only owner can see their scan history
+      match /scan_history/{scanId} {
+        allow read:   if isOwner(userId);
+        allow create: if isOwner(userId) && hasOnlyFields([
+          'scanId', 'startedAt', 'completedAt',
+          'totalFilesScanned', 'totalDuplicates',
+          'totalWastedSpace', 'spaceSaved', 'isComplete'
+        ]);
+        allow update: if isOwner(userId);
+        allow delete: if isOwner(userId);
+      }
+
+      // ── Settings subcollection ─────────────────────────────
+      match /settings/{settingId} {
+        allow read:   if isOwner(userId);
+        allow write:  if isOwner(userId);
+      }
+
+      // ── Deleted files log (recycle bin sync) ──────────────
+      match /deleted_files/{fileId} {
+        allow read:   if isOwner(userId);
+        allow create: if isOwner(userId);
+        allow delete: if isOwner(userId);
+        // Cannot restore from here directly — done in app
+        allow update: if false;
+      }
+    }
+
+    // ── App config (read-only for all logged-in users) ────────
+    // Things like: minimum app version, feature flags
+    match /app_config/{configId} {
+      allow read:  if isLoggedIn();
+      allow write: if false; // Only admin via Firebase Console
+    }
+
+    // ── Subscriptions (written by Firebase Functions only) ───
+    match /subscriptions/{subId} {
+      allow read:  if isLoggedIn() && resource.data.userId == request.auth.uid;
+      allow write: if false; // Only backend Firebase Functions can write
+    }
+
+    // ── Block everything else ─────────────────────────────────
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

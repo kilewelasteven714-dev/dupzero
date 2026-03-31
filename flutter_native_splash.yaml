@@ -1,0 +1,15 @@
+# DupZero Splash Screen Configuration
+# Run: flutter pub run flutter_native_splash:create
+# Developed by Tavoo
+
+flutter_native_splash:
+  color: "#07070F"
+  color_dark: "#07070F"
+  image: assets/icons/app_icon.png
+  android: true
+  ios: true
+  web: false
+  android_12:
+    color: "#07070F"
+    image: assets/icons/app_icon.png
+    icon_background_color: "#07070F"

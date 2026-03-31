@@ -1,0 +1,68 @@
+{
+  "@@locale": "en",
+  "appName": "DupZero",
+  "tagline": "Intelligent Duplicate File Cleaner",
+  "developedBy": "Developed by Tavoo",
+
+  "home": "Home",
+  "scan": "Scan",
+  "duplicates": "Duplicates",
+  "analytics": "Analytics",
+  "settings": "Settings",
+
+  "startScan": "Start Scan",
+  "scanComplete": "Scan Complete!",
+  "scanning": "Scanning Files...",
+  "cancel": "Cancel",
+
+  "storageAlert": "Storage {percent}% Full",
+  "@storageAlert": {
+    "placeholders": {
+      "percent": { "type": "int" }
+    }
+  },
+  "scanNow": "Scan Now",
+  "worksOffline": "Works 100% Offline",
+
+  "deleteForever": "Delete Forever",
+  "permanentDeleteWarning": "Deleted files CANNOT be recovered",
+  "confirmDelete": "Permanently Delete Files?",
+  "keepFile": "KEEP",
+  "deleteFile": "DELETE",
+
+  "recycleBin": "Recycle Bin",
+  "restore": "Restore",
+  "emptyBin": "Empty Recycle Bin",
+  "daysLeft": "{days} days left",
+  "@daysLeft": {
+    "placeholders": {
+      "days": { "type": "int" }
+    }
+  },
+
+  "proTitle": "DupZero Pro",
+  "upgradeNow": "Upgrade to Pro",
+  "monthlyPlan": "Monthly",
+  "yearlyPlan": "Yearly",
+  "lifetimePlan": "Lifetime",
+  "freeTrial": "Start 7-Day Free Trial",
+  "cancelAnytime": "Cancel anytime",
+
+  "totalSaved": "Total Saved",
+  "scansRun": "Scans Run",
+  "filesDeleted": "Files Deleted",
+  "groupsFound": "Groups Found",
+  "timeSaved": "Time Saved",
+  "foldersScanned": "Folders Scanned",
+
+  "appearance": "Appearance",
+  "theme": "Theme",
+  "dark": "Dark",
+  "light": "Light",
+  "system": "System",
+  "colorTheme": "Color Theme",
+
+  "aboutDupZero": "About DupZero",
+  "version": "Version",
+  "developer": "Developer"
+}

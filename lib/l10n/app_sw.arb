@@ -1,0 +1,68 @@
+{
+  "@@locale": "sw",
+  "appName": "DupZero",
+  "tagline": "Kisafishaji Mahiri cha Faili Zinazofanana",
+  "developedBy": "Imetengenezwa na Tavoo",
+
+  "home": "Nyumbani",
+  "scan": "Scan",
+  "duplicates": "Nakala",
+  "analytics": "Takwimu",
+  "settings": "Mipangilio",
+
+  "startScan": "Anza Scan",
+  "scanComplete": "Scan Imekamilika!",
+  "scanning": "Inascan Faili...",
+  "cancel": "Ghairi",
+
+  "storageAlert": "Hifadhi {percent}% Imejaa",
+  "@storageAlert": {
+    "placeholders": {
+      "percent": { "type": "int" }
+    }
+  },
+  "scanNow": "Scan Sasa",
+  "worksOffline": "Inafanya Kazi 100% Bila Intaneti",
+
+  "deleteForever": "Futa Milele",
+  "permanentDeleteWarning": "Faili zilizofutwa HAZIWEZI kurudishwa",
+  "confirmDelete": "Futa Faili Kabisa?",
+  "keepFile": "HIFADHI",
+  "deleteFile": "FUTA",
+
+  "recycleBin": "Kapu la Taka",
+  "restore": "Rejesha",
+  "emptyBin": "Toa Kapu",
+  "daysLeft": "Siku {days} zimebaki",
+  "@daysLeft": {
+    "placeholders": {
+      "days": { "type": "int" }
+    }
+  },
+
+  "proTitle": "DupZero Pro",
+  "upgradeNow": "Pata Pro",
+  "monthlyPlan": "Kila Mwezi",
+  "yearlyPlan": "Kila Mwaka",
+  "lifetimePlan": "Milele",
+  "freeTrial": "Anza Jaribu Bure la Siku 7",
+  "cancelAnytime": "Ghairi wakati wowote",
+
+  "totalSaved": "Jumla Iliyookolewa",
+  "scansRun": "Scan Zilizofanywa",
+  "filesDeleted": "Faili Zilizofutwa",
+  "groupsFound": "Makundi Yaliyopatikana",
+  "timeSaved": "Muda Uliookolewa",
+  "foldersScanned": "Folda Zilizoscanwa",
+
+  "appearance": "Mwonekano",
+  "theme": "Mandhari",
+  "dark": "Giza",
+  "light": "Mwanga",
+  "system": "Mfumo",
+  "colorTheme": "Rangi ya Mandhari",
+
+  "aboutDupZero": "Kuhusu DupZero",
+  "version": "Toleo",
+  "developer": "Mtengenezaji"
+}
